@@ -1,6 +1,10 @@
 # message-app-redux
 
-(ACABEI DE SUBIR, AINDA VOU SEPARAR OS COMPONENTES)
+<b>Como fazer funcionar?</b>
+<br>
+<b>No terminal (cmd), com npm instalada execute os seguintes comandos:</b>
+- npm install
+- gulp
 
 <b>Exemplo simples feito com:</b>
 - React
