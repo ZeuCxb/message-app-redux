@@ -7,6 +7,13 @@
 - Redux
 - JS (ES6)
 - Sass
+- Webpack
+
+Instalando essas dependências:
+`npm install`
+
+Build:
+`npm run build`
 
 <hr />
 

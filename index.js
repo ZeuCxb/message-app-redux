@@ -1,9 +1,13 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+
 const counter = (state = [], action) => {
   switch (action.type) {
     case 'SAVE':
     	let name = action.data.name
       let msg = action.data.msg
-      
+
       return [
       	...state,
         {
@@ -16,7 +20,6 @@ const counter = (state = [], action) => {
   }
 }
 
-const { createStore } = Redux
 const store = createStore(counter)
 
 const Title = ({
@@ -30,26 +33,26 @@ const Title = ({
 class Post extends React.Component {
 	send(e) {
   	e.preventDefault()
-    
+
     let name = this.refs.name
     let msg = this.refs.msg
-    
+
     if(name.value != '' && msg.value != '') {
       store.dispatch({ type: 'SAVE', data: {name: name.value, msg: msg.value} })
-      
-      u('.error').text('');
-      
+
+      this.refs.error.innerText = '';
+
       name.value = '';
       msg.value = '';
     } else {
-    	u('.error').text('Preencha todos os campos');
+    	this.refs.error.innerText = 'Preencha todos os campos';
     }
   }
-  
+
   render() {
     return <form>
-    	<h4 className="error"></h4>
-    
+    	<h4 className="error" ref="error"></h4>
+
       <p>
         <input ref="name" placeholder="Name..." />
       </p>
@@ -78,7 +81,7 @@ const MessageList = ({
   	let msgs = messages.map((data, cont) => {
       return <Message key={cont} name={data.name} msg={data.msg} />
     })
-  
+
     return <div>
       {msgs}
     </div>
