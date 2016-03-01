@@ -2,7 +2,7 @@
 
 <b>Como fazer funcionar?</b>
 <br>
-<b>No terminal (cmd), com npm instalada execute os seguintes comandos:</b>
+<b>No terminal (cmd), com npm instalada, execute os seguintes comandos:</b>
 - npm install
 - gulp
 
