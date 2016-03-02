@@ -15,8 +15,9 @@ function render() {
 	ReactDOM.render(
 		// Aqui passamos por parametro para o nosso component MessageApp tudo que ele precisa para "trabalhar".
 		// - title
-		/* - messages (Recebe o retorno de getState ou seja, o estado atual retornado pelo reducer, nesse caso
-		as mensagens enviadas)
+		/* 
+			- messages (Recebe o retorno de getState ou seja, o estado atual retornado pelo reducer, nesse caso
+			as mensagens enviadas)
 		*/
 		// - store (Recebe a store do Redux)
     	<MessageApp title="Message App" messages={store.getState()} store={store} />,
