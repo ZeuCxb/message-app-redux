@@ -1,9 +1,19 @@
+/*
+  O componente Post é o "mais complexo" da aplicação,
+  ele recebe a store do Redux e é responsável por chamar a ação SAVE do reducer.
+*/
 class Post extends React.Component {
+  // O constructor é o método responsável por iniciar nosso componente
   constructor(props) {
     super(props)
     this.store = props.store
   }
 
+  /*
+    O metodo send captura os elementos name e msg usando refs,
+    verifica se estão vazios, se não estiverem, chama o método dispatch da store
+    que é o responsável por fazer a chamada da função no reducer.
+  */
 	send(e) {
   	e.preventDefault()
     
@@ -12,11 +22,6 @@ class Post extends React.Component {
     
     if(name.value != '' && msg.value != '') {
       this.store.dispatch({ type: 'SAVE', data: {name: name.value, msg: msg.value} })
-      
-      u('.error').text('');
-      
-      name.value = '';
-      msg.value = '';
     } else {
     	u('.error').text('Preencha todos os campos');
     }
